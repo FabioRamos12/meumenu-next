@@ -1,0 +1,109 @@
+{
+    "choosables": [
+        {
+            "choosableName": "Escolha o Tamanho",
+            "choosableInfo": [
+                {
+                    "optionName": "10 Pessoas",
+                    "optionPrice": 10.0,
+                    "check": true
+                },
+                {
+                    "optionName": "15 Pessoas",
+                    "optionPrice": 12.0,
+                    "check": false
+                },
+                {
+                    "optionName": "20 Pessoas",
+                    "optionPrice": 15.0,
+                    "check": false
+                },
+                {
+                    "optionName": "25 Pessoas",
+                    "optionPrice": 15.0,
+                    "check": false
+                },
+                {
+                    "optionName": "30 Pessoas",
+                    "optionPrice": 15.0,
+                    "check": false
+                }
+            ]
+        },
+        {
+            "choosableName": "Escolha a Massa",
+            "choosableInfo": [
+                {
+                    "optionName": "Branca",
+                    "optionPrice": 10.0,
+                    "check": true
+                },
+                {
+                    "optionName": "Chocolate",
+                    "optionPrice": 12.0,
+                    "check": false
+                }
+            ]
+        },
+        {
+            "choosableName": "Escolha o Formato",
+            "choosableInfo": [
+                {
+                    "optionName": "Redondo",
+                    "optionPrice": 10.0,
+                    "check": true
+                },
+                {
+                    "optionName": "Quadrado",
+                    "optionPrice": 12.0,
+                    "check": false
+                },
+                {
+                    "optionName": "Retangular",
+                    "optionPrice": 12.0,
+                    "check": false
+                }
+            ]
+        },
+        {
+            "choosableName": "Escolha a Cobertura",
+            "choosableInfo": [
+                {
+                    "optionName": "Chantily",
+                    "optionPrice": 1.0,
+                    "check": true
+                },
+                {
+                    "optionName": "Leite Moça",
+                    "optionPrice": 2.0,
+                    "check": false
+                },
+                {
+                    "optionName": "Leite Moça 1",
+                    "optionPrice": 2.0,
+                    "check": false
+                },
+                {
+                    "optionName": "Leite Moça 2",
+                    "optionPrice": 2.0,
+                    "check": false
+                },
+                {
+                    "optionName": "Leite Moça 3",
+                    "optionPrice": 2.0,
+                    "check": false
+                },
+                {
+                    "optionName": "Leite Moça 4",
+                    "optionPrice": 2.0,
+                    "check": false
+                },
+                {
+                    "optionName": "Leite Moça 5",
+                    "optionPrice": 2.0,
+                    "check": false
+                }
+            ]
+        }
+    ]
+}
