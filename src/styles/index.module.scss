@@ -1,0 +1,109 @@
+.productInfoContainer {
+    max-width: 600px;
+    margin: 0 auto;
+
+    .productImage {
+        width: 100%;
+    }
+
+    .productInfo {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        padding: 1.6rem;
+
+        .productName {
+            font-weight: 500;
+            font-size: 2.4rem;
+            line-height: 2.4rem;
+            color: #3e4462;
+        }
+
+        .productPrice {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: #7e7e7e;
+            margin-bottom: 0.8rem;
+        }
+
+        .productDescription {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            color: #7e7e7e;
+        }
+    }
+}
+
+.choosableOptions {
+    max-width: 600px;
+    margin: 0 auto;
+
+    position: sticky;
+    top: 63px;
+    left: 0;
+
+    header {
+        background: #fff;
+        padding: 1.6rem;
+        border: 1px solid #bfbfbf;
+
+        h3 {
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: #3e4462;
+        }
+    }
+
+    .option {
+        background: #f7f8fa;
+        border-width: 0px 1px 1px 1px;
+        border-style: solid;
+        border-color: #bfbfbf;
+
+        padding: 1.6rem;
+
+        display: flex;
+        align-items: center;
+
+        .optionName {
+            font-family: "Roboto", sans-serif;
+            margin-right: auto;
+            color: #7e7e7e;
+            font-size: 1.4rem;
+            font-family: 500;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+
+            .optionPrice {
+                font-family: "Roboto", sans-serif;
+                margin-right: 15px;
+                color: #7e7e7e;
+                font-size: 14px;
+                font-family: 400;
+            }
+
+            input {
+                width: 15px;
+                height: 15px;
+                background-color: white;
+                border-radius: 50%;
+                border: 1px solid #d12474;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+
+                &:checked {
+                    background: #d12474;
+                }
+            }
+        }
+    }
+}
