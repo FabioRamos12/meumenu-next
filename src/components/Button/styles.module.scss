@@ -1,0 +1,11 @@
+.buttonContainer {
+    max-width: 600px;
+    margin: 0 auto;
+
+    position: relative;
+    bottom: 0;
+    button {
+        width: 100%;
+        padding: 1.6rem;
+    }
+}
