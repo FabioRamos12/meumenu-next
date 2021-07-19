@@ -1,106 +1,106 @@
 {
     "choosables": [
         {
-            "choosableName": "Escolha o Tamanho",
-            "choosableInfo": [
+            "title": "Escolha o Tamanho",
+            "options": [
                 {
-                    "optionName": "10 Pessoas",
-                    "optionPrice": 10.0,
+                    "name": "10 Pessoas",
+                    "price": 10.0,
                     "check": true
                 },
                 {
-                    "optionName": "15 Pessoas",
-                    "optionPrice": 12.0,
+                    "name": "15 Pessoas",
+                    "price": 12.0,
                     "check": false
                 },
                 {
-                    "optionName": "20 Pessoas",
-                    "optionPrice": 15.0,
+                    "name": "20 Pessoas",
+                    "price": 15.0,
                     "check": false
                 },
                 {
-                    "optionName": "25 Pessoas",
-                    "optionPrice": 15.0,
+                    "name": "25 Pessoas",
+                    "price": 15.0,
                     "check": false
                 },
                 {
-                    "optionName": "30 Pessoas",
-                    "optionPrice": 15.0,
+                    "name": "30 Pessoas",
+                    "price": 15.0,
                     "check": false
                 }
             ]
         },
         {
-            "choosableName": "Escolha a Massa",
-            "choosableInfo": [
+            "title": "Escolha a Massa",
+            "options": [
                 {
-                    "optionName": "Branca",
-                    "optionPrice": 10.0,
+                    "name": "Branca",
+                    "price": 10.0,
                     "check": true
                 },
                 {
-                    "optionName": "Chocolate",
-                    "optionPrice": 12.0,
+                    "name": "Chocolate",
+                    "price": 12.0,
                     "check": false
                 }
             ]
         },
         {
-            "choosableName": "Escolha o Formato",
-            "choosableInfo": [
+            "title": "Escolha o Formato",
+            "options": [
                 {
-                    "optionName": "Redondo",
-                    "optionPrice": 10.0,
+                    "name": "Redondo",
+                    "price": 10.0,
                     "check": true
                 },
                 {
-                    "optionName": "Quadrado",
-                    "optionPrice": 12.0,
+                    "name": "Quadrado",
+                    "price": 12.0,
                     "check": false
                 },
                 {
-                    "optionName": "Retangular",
-                    "optionPrice": 12.0,
+                    "name": "Retangular",
+                    "price": 12.0,
                     "check": false
                 }
             ]
         },
         {
-            "choosableName": "Escolha a Cobertura",
-            "choosableInfo": [
+            "title": "Escolha a Cobertura",
+            "options": [
                 {
-                    "optionName": "Chantily",
-                    "optionPrice": 1.0,
+                    "name": "Chantily",
+                    "price": 1.0,
                     "check": true
                 },
                 {
-                    "optionName": "Leite Moça",
-                    "optionPrice": 2.0,
+                    "name": "Leite Moça",
+                    "price": 2.0,
                     "check": false
                 },
                 {
-                    "optionName": "Leite Moça 1",
-                    "optionPrice": 2.0,
+                    "name": "Leite Moça 1",
+                    "price": 2.0,
                     "check": false
                 },
                 {
-                    "optionName": "Leite Moça 2",
-                    "optionPrice": 2.0,
+                    "name": "Leite Moça 2",
+                    "price": 2.0,
                     "check": false
                 },
                 {
-                    "optionName": "Leite Moça 3",
-                    "optionPrice": 2.0,
+                    "name": "Leite Moça 3",
+                    "price": 2.0,
                     "check": false
                 },
                 {
-                    "optionName": "Leite Moça 4",
-                    "optionPrice": 2.0,
+                    "name": "Leite Moça 4",
+                    "price": 2.0,
                     "check": false
                 },
                 {
-                    "optionName": "Leite Moça 5",
-                    "optionPrice": 2.0,
+                    "name": "Leite Moça 5",
+                    "price": 2.0,
                     "check": false
                 }
             ]
