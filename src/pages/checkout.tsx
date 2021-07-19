@@ -20,24 +20,48 @@ export default function Checkout() {
 
                     <article className={styles.checkoutItems}>
                         <div className={styles.item}>
-                            <div>
+                            <header>
                                 <h3>Bolo de Kitkat Trufado</h3>
                                 <button>
                                     <Image
                                         src="/remove.svg"
-                                        width={15}
-                                        height={15}
+                                        width={20}
+                                        height={20}
                                         alt="Remover item"
                                     />
                                 </button>
-                            </div>
+                            </header>
 
-                            <div>
+                            <div className={styles.itemInfo}>
                                 <div>
                                     <span>10 pessoas</span>
                                     <span>Branca</span>
-                                    <span></span>
-                                    <span></span>
+                                    <span>Redondo</span>
+                                    <span>Chantily</span>
+                                </div>
+
+                                <span>R$ 40,00</span>
+                            </div>
+                        </div>
+                        <div className={styles.item}>
+                            <header>
+                                <h3>Bolo de Kitkat Trufado</h3>
+                                <button>
+                                    <Image
+                                        src="/remove.svg"
+                                        width={20}
+                                        height={20}
+                                        alt="Remover item"
+                                    />
+                                </button>
+                            </header>
+
+                            <div className={styles.itemInfo}>
+                                <div>
+                                    <span>10 pessoas</span>
+                                    <span>Branca</span>
+                                    <span>Redondo</span>
+                                    <span>Chantily</span>
                                 </div>
 
                                 <span>R$ 40,00</span>
@@ -46,11 +70,11 @@ export default function Checkout() {
                     </article>
 
                     <article className={styles.observations}>
-                        <div>
+                        <div className={styles.observationHeader}>
                             <Image
                                 src="/chat.svg"
-                                width={15}
-                                height={15}
+                                width={20}
+                                height={20}
                                 alt="Observações"
                             />
                             <span>Alguma observação?</span>
