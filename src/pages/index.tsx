@@ -1,134 +1,438 @@
+import styles from "../styles/index.module.scss";
+import Script from "next/script";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
-import styles from "../styles/index.module.scss";
-
-import { Header } from "../components/Header";
-import { Button } from "../components/Button";
-import { GetStaticProps } from "next";
-import { api } from "../services/api";
-
-type Info = {
-    optionName: string;
-    optionPrice: string;
-    check: boolean;
-};
-
-type Choosable = {
-    name: string;
-    info: Info[];
-};
-
-type HomeProps = {
-    choosables: Choosable[];
-};
-
-export default function Home({ choosables }: HomeProps) {
-    console.log(choosables);
-
+export default function Home() {
     return (
         <>
             <Head>
-                <title>Meu Menu | M.A Doceria Artesanal</title>
+                <link
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+                    rel="stylesheet"
+                    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+                    crossOrigin="anonymous"
+                />
             </Head>
 
-            <main>
-                <Header />
+            <Script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossOrigin="anonymous"
+            />
 
-                <section className={styles.productInfoContainer}>
-                    <div className={styles.productImage}>
-                        <Image
-                            src="/bolo-kit-kat-destaque.png"
-                            width={600}
-                            height={300}
-                            objectFit="cover"
-                            alt="Imagem do Produto"
-                        />
-                    </div>
-                    <div className={styles.productInfo}>
-                        <h2 className={styles.productName}>
-                            Bolo de Kitkat Trufado com sabor de cereja
-                        </h2>
-                        <span className={styles.productPrice}>
-                            A partir de R$ 30,00
-                        </span>
-                        <p className={styles.productDescription}>
-                            Bolo de Kitkat com chocolate. Cobertura de frutas
-                            vermelhasBolo de Kitkat com chocolate. Bolo de
-                            Kitkat com chocolate. Cobertura de frutas
-                            vermelhasBolo de Kitkat com chocolate.
-                        </p>
-                    </div>
+            <main>
+                <section>
+                    <article className={styles.test}></article>
                 </section>
 
                 <section>
-                    {choosables.map((choosable, index) => {
-                        return (
-                            <article
-                                className={styles.choosableOptions}
-                                key={index}
-                            >
-                                <header>
-                                    <h3>{choosable.name}</h3>
-                                </header>
-                                {choosable.info.map((info, infoIndex) => {
-                                    return (
-                                        <label
-                                            htmlFor={info.optionName}
-                                            className={styles.option}
-                                            key={infoIndex}
-                                        >
-                                            <span className={styles.optionName}>
-                                                {info.optionName}
-                                            </span>
-                                            <div>
-                                                <span
-                                                    className={
-                                                        styles.optionPrice
-                                                    }
-                                                >
-                                                    + R$ {info.optionPrice}
-                                                </span>
-                                                <input
-                                                    type="checkbox"
-                                                    id={info.optionName}
-                                                    defaultChecked={info.check}
-                                                />
-                                            </div>
-                                        </label>
-                                    );
-                                })}
-                            </article>
-                        );
-                    })}
-                </section>
+                    <nav
+                        id="navbar"
+                        className={`navbar navbar-light bg-light px-3 ${styles.tab}`}
+                    >
+                        <ul className="nav nav-pills">
+                            <li className="nav-item">
+                                <a
+                                    className="nav-link"
+                                    href="#scrollspyHeading1"
+                                >
+                                    Bolos
+                                </a>
+                            </li>
 
-                <Button />
+                            <li className="nav-item">
+                                <a
+                                    className="nav-link"
+                                    href="#scrollspyHeading2"
+                                >
+                                    Doces
+                                </a>
+                            </li>
+
+                            <li className="nav-item">
+                                <a
+                                    className="nav-link"
+                                    href="#scrollspyHeading3"
+                                >
+                                    Sobremesas
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div
+                        data-bs-spy="scroll"
+                        data-bs-target="#navbar"
+                        data-bs-offset="44"
+                        className={`scrollspy-example ${styles.test}`}
+                        tabIndex={0}
+                    >
+                        <div className={styles.products}>
+                            <div className={styles.category}>
+                                <h4
+                                    id="scrollspyHeading1"
+                                    className={styles.categoryTitle}
+                                >
+                                    Bolos:
+                                </h4>
+                                <div className={styles.productsCarousel}>
+                                    <div className={styles.cardContainer}>
+                                        <a
+                                            href="/product"
+                                            className={`card ${styles.card}`}
+                                        >
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas Bolo de
+                                                    Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={styles.category}>
+                                <h4
+                                    id="scrollspyHeading2"
+                                    className={styles.categoryTitle}
+                                >
+                                    Doces:
+                                </h4>
+                                <div className={styles.productsCarousel}>
+                                    <div className={styles.cardContainer}>
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas Bolo de
+                                                    Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={styles.category}>
+                                <h4
+                                    id="scrollspyHeading3"
+                                    className={styles.categoryTitle}
+                                >
+                                    Sobremesas:
+                                </h4>
+                                <div className={styles.productsCarousel}>
+                                    <div className={styles.cardContainer}>
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas Bolo de
+                                                    Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+
+                                        <a className={`card ${styles.card}`}>
+                                            <Image
+                                                src="/bolo-kit-kat-destaque.png"
+                                                width={200}
+                                                height={150}
+                                                objectFit="cover"
+                                            />
+                                            <div>
+                                                <h5
+                                                    className={styles.cardTitle}
+                                                >
+                                                    Bolo de Kitcat Trufado
+                                                </h5>
+                                                <p className={styles.cardText}>
+                                                    Bolo de Kitcat Trufado com
+                                                    chocolate. Cobertura de
+                                                    frutas vermelhas
+                                                </p>
+                                                <span
+                                                    className={styles.cardPrice}
+                                                >
+                                                    R$ 30,00
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
         </>
     );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-    const { data } = await api.get("choosables");
-
-    const choosables = data.map((choosable) => {
-        choosable.choosableInfo.map((info) => {
-            info.optionPrice = info.optionPrice.toString();
-            info.optionPrice = parseFloat(info.optionPrice)
-                .toFixed(2)
-                .replace(".", ",");
-        });
-
-        return {
-            name: choosable.choosableName,
-            info: choosable.choosableInfo,
-        };
-    });
-
-    return {
-        props: {
-            choosables,
-        },
-    };
-};
